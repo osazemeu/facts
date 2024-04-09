@@ -23,7 +23,7 @@ retriever = db.as_retriever()
 chain = RetrievalQA.from_chain_type(
     llm=chat,
     retriever=retriever,
-    chain_type="map_reduce",
+    chain_type="stuff",
     verbose=True
 )
 
