@@ -1,6 +1,7 @@
 from langchain.embeddings.base import Embeddings
-from langchain.vectorstores.chroma import Chroma
+from langchain.vectorstores import Chroma
 from langchain.schema import BaseRetriever
+
 
 class RedundantFilterRetriever(BaseRetriever):
     embeddings: Embeddings
@@ -16,6 +17,6 @@ class RedundantFilterRetriever(BaseRetriever):
             embedding=emb,
             lambda_mult=0.8
         )
-    
+
     async def aget_relevant_documents(self):
         return []
